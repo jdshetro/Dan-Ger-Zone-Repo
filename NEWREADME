@@ -1,0 +1,35 @@
+# Dan-Ger Zone
+
+Dan-Ger Zone is a semester project prototype for **ISYS 43603 – Business Project Development**.
+
+This repository now includes an initial working front-end MVP for a web-based calendar and messaging application aligned to the project vision.
+
+## Current Prototype Features
+
+- Mock secure login screen (session-local auth)
+- Appointment management (create, edit, delete)
+- Client linkage for each appointment
+- Message template generation for Sales and HR workflows
+- Message history tracking
+- Dashboard summary with upcoming appointments and recent messages
+- Appointment reminder banner for near-term meetings
+- Search/filter support for appointments and messages
+- Message categorization for HR/Sales workflows
+
+## Quick Start
+
+Because this is a static app, you can run it with any local web server:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open:
+
+- `http://localhost:8000/app/`
+
+## Project Artifacts
+
+- `docs/deliverable-01-02.md` — team biography/contract + vision/backlog source content
+- `docs/mvp-plan.md` — implementation plan mapped to MoSCoW priorities
+- `app/` — browser prototype files
