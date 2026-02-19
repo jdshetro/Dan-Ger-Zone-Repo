@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dan-Ger Zone Prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <section id="login-panel" class="card">
+      <h1>Dan-Ger Zone</h1>
+      <p class="sub">Sales + HR calendar and messaging prototype</p>
+      <form id="login-form">
+        <label>Email
+          <input id="login-email" type="email" required placeholder="name@company.com" />
+        </label>
+        <label>Password
+          <input id="login-password" type="password" required minlength="4" placeholder="••••" />
+        </label>
+        <button type="submit">Sign In</button>
+      </form>
+      <p class="hint">Prototype auth only: any valid email + 4+ character password.</p>
+    </section>
+
+    <section id="app-panel" class="hidden">
+      <header class="topbar card">
+        <div>
+          <h2>Dashboard</h2>
+          <p id="welcome"></p>
+        </div>
+        <button id="logout" class="secondary">Log Out</button>
+      </header>
+
+      <section id="reminder-panel" class="card hidden"></section>
+
+      <section class="grid">
+        <article class="card">
+          <h3>Quick Stats</h3>
+          <div class="stats">
+            <p><strong id="upcoming-count">0</strong><span>Upcoming Appointments</span></p>
+            <p><strong id="message-count">0</strong><span>Total Messages</span></p>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Create / Edit Appointment</h3>
+          <form id="appointment-form" class="stack">
+            <input type="hidden" id="appointment-id" />
+            <label>Client Name
+              <input id="client-name" required maxlength="60" />
+            </label>
+            <label>Title
+              <input id="appointment-title" required maxlength="80" />
+            </label>
+            <label>Date & Time
+              <input id="appointment-datetime" type="datetime-local" required />
+            </label>
+            <div class="actions">
+              <button type="submit">Save Appointment</button>
+              <button type="button" id="clear-appointment" class="secondary">Clear</button>
+            </div>
+          </form>
+        </article>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h3>Appointments</h3>
+          <label>Search Appointments
+            <input id="appointment-search" placeholder="Search by client/title" />
+          </label>
+          <ul id="appointment-list" class="list"></ul>
+        </article>
+
+        <article class="card">
+          <h3>Generate Message</h3>
+          <form id="message-form" class="stack">
+            <label>Type
+              <select id="message-type">
+                <option value="sales">Sales Follow-up</option>
+                <option value="hr">HR Communication</option>
+              </select>
+            </label>
+            <label>Category
+              <select id="message-category">
+                <option value="follow-up">Follow-up</option>
+                <option value="onboarding">Onboarding</option>
+                <option value="policy">Policy Update</option>
+                <option value="performance">Performance Review</option>
+                <option value="general">General</option>
+              </select>
+            </label>
+            <label>Client / Employee Name
+              <input id="message-recipient" required maxlength="60" />
+            </label>
+            <label>Context
+              <input id="message-context" required maxlength="120" placeholder="e.g., demo recap / onboarding day 1" />
+            </label>
+            <button type="submit">Generate + Save</button>
+          </form>
+          <pre id="message-preview" class="preview"></pre>
+        </article>
+      </section>
+
+      <section class="card">
+        <h3>Message History</h3>
+        <label>Search Messages
+          <input id="message-search" placeholder="Search by recipient/type/content" />
+        </label>
+        <ul id="message-list" class="list"></ul>
+      </section>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
